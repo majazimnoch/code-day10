@@ -1,5 +1,19 @@
 const evilButton = document.getElementById("evil-button");
 const OFFSET = 100;
+const goodButton = document.getElementById("good-btn");
+const gifContainer = document.getElementById("gif-container");
+
+goodButton.addEventListener('click', () => {
+    // Create a new div with the updated content
+    const newDiv = document.createElement('div');
+    newDiv.id = 'gif-container';
+    newDiv.innerHTML = `
+    <div style="width:100%;height:0;padding-bottom:66%;position:relative;"><iframe src="https://giphy.com/embed/YHhrBQZQWHiIt98T7C" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+    `;
+
+    // Replace the existing div with the new one
+    gifContainer.parentNode.replaceChild(newDiv, gifContainer);
+});
 
 evilButton.addEventListener('click', () => {
     alert('Nice Try');
