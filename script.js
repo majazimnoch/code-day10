@@ -9,7 +9,8 @@ goodButton.addEventListener('click', () => {
     const newDiv = document.createElement('div');
     newDiv.id = 'gif-container';
     newDiv.innerHTML = `
-    <div style="width:100%;height:0;padding-bottom:66%;position:relative;"><iframe src="https://giphy.com/embed/YHhrBQZQWHiIt98T7C" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed-new" allowFullScreen></iframe></div>
+    <div class="wrapper-new" style="width:100%;height:0;padding-bottom:100%;position:relative;">
+    <iframe src="https://giphy.com/embed/AgO9VR2a9KW1MSP73I" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed-new" allowFullScreen></iframe>
     `;
     // Replacing the existing div with the new one
     gifContainer.parentNode.replaceChild(newDiv, gifContainer);
@@ -17,7 +18,7 @@ goodButton.addEventListener('click', () => {
     const newP = document.createElement('p');
     newP.id = 'paragraph';
     newP.innerHTML = `
-    <p>Yaaaaay</p>`
+    <p class="new-p">Yaaaaay!</p>`
 
     paragraph.parentNode.replaceChild(newP, paragraph);
 

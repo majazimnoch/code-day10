@@ -12,21 +12,38 @@ body {
   /* */
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  justify-items: flex-start;
   align-items: center;
   font-family: "Playfair Display", serif;
+  margin-top: -80px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+  align-items: center;
+}
+
+.wrapper-new {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    margin-top: -120px;
+  }
+
+.new-p {
+    font-size: 30px;
+    margin-top: -120px;
 }
 
 .button-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
 button {
