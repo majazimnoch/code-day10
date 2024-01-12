@@ -2,15 +2,14 @@ const evilButton = document.getElementById("evil-button");
 const OFFSET = 100;
 const goodButton = document.getElementById("good-btn");
 const gifContainer = document.getElementById("gif-container");
-const paragraph = document.getElementById("paragraph")
-
+const paragraph = document.getElementById("paragraph");
 
 goodButton.addEventListener('click', () => {
     // Creating a new div with the updated content
     const newDiv = document.createElement('div');
     newDiv.id = 'gif-container';
     newDiv.innerHTML = `
-    <div style="width:100%;height:0;padding-bottom:66%;position:relative;"><iframe src="https://giphy.com/embed/YHhrBQZQWHiIt98T7C" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+    <div style="width:100%;height:0;padding-bottom:66%;position:relative;"><iframe src="https://giphy.com/embed/YHhrBQZQWHiIt98T7C" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed-new" allowFullScreen></iframe></div>
     `;
     // Replacing the existing div with the new one
     gifContainer.parentNode.replaceChild(newDiv, gifContainer);
@@ -38,10 +37,12 @@ document.addEventListener('mousemove', (e) => {
     const buttonBox = evilButton.getBoundingClientRect();
     const horizontalDistanceFrom = distanceFromCenter(buttonBox.x, x, buttonBox.width);
     const verticalDistanceFrom = distanceFromCenter(buttonBox.y, y, buttonBox.height);
-    const horizontalOffset = buttonBox.width / 2 + OFFSET;
-    const verticalOffset = buttonBox.height / 2 + OFFSET;
+    const threshold = 50; // Adjust this threshold as needed
 
-    if (Math.abs(horizontalDistanceFrom) <= horizontalOffset && Math.abs(verticalDistanceFrom) <= verticalOffset) {
+    if (Math.abs(horizontalDistanceFrom) <= threshold && Math.abs(verticalDistanceFrom) <= threshold) {
+        const horizontalOffset = buttonBox.width / 2 + OFFSET;
+        const verticalOffset = buttonBox.height / 2 + OFFSET;
+
         setButtonPosition(
             buttonBox.x + horizontalOffset / horizontalDistanceFrom * 10,
             buttonBox.y + verticalOffset / verticalDistanceFrom * 10
@@ -76,4 +77,4 @@ function distanceFromCenter(boxPosition, mousePosition, boxSize) {
 }
 
 // Setting the initial position when the page loads
-setButtonPosition(330, 588.5);  // Adjust the initial position as needed
+setButtonPosition(goodButton.getBoundingClientRect().left, goodButton.getBoundingClientRect().bottom + 50);

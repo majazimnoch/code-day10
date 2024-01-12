@@ -47,3 +47,9 @@ button {
 .giphy-embed {
     pointer-events: none;
 } 
+
+.giphy-embed-new {
+    width: 400px;
+    height: 400px;
+    pointer-events: none;
+}
