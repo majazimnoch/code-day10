@@ -44,6 +44,6 @@ button {
 }
 
 /* so we can click the image of the gif */
-/* .giphy-embed {
+.giphy-embed {
     pointer-events: none;
-} */
+} 
