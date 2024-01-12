@@ -89,7 +89,7 @@ button:focus-visible {
   top: 10px;
 }
 
-/* so we can click the image of the gif */
+/* so we cant click on the image of the gif */
 .giphy-embed {
   pointer-events: none;
 }
