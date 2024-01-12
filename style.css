@@ -33,12 +33,13 @@ body {
     gap: 20px;
     padding: 20px;
     align-items: center;
-    margin-top: -120px;
+    
+    margin-top: 50px;
   }
 
 .new-p {
     font-size: 30px;
-    margin-top: -120px;
+    margin-top: -130px;
 }
 
 .button-container {
@@ -94,15 +95,11 @@ button:focus-visible {
 }
 
 .giphy-embed-new {
-  width: 400px;
-  height: 400px;
-  pointer-events: none;
-}
-
-@media (max-width: 420px) {
-    .giphy-embed-new {
-        max-width: 420px;
-        width: 600%;
-        height: 300px;
-      }
-}
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    pointer-events: none;
+  }
